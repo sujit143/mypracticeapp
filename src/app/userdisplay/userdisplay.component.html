@@ -1,0 +1,20 @@
+<h1>User Display Page</h1>
+<div class="container">
+  <table class="table">
+    <thead>
+      <th>user email</th>
+      <th>user name</th>
+      <th>password</th>
+      <th>mobile number</th>
+      <tr *ngFor="let item of userArr">
+        <td>{{item.user_email}}</td>
+        <td>{{item.user_name}}</td>
+        <td>{{item.user_password}}</td>
+        <td>{{item.user_mobile_no}}</td>
+        <td><button class="btn btn-info" (click)="onUserDelete(item)">delete</button>
+          <button class="btn btn-info"  (click)="onUserEdit(item)">Edit</button>
+        </td>
+      </tr>
+    </thead>
+  </table>
+</div>

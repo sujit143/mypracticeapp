@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"  data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <img src="assets\download.png" height=70 width=200px>
+    <!-- <a class="navbar-brand" href="#">Brand</a> -->
+  </div>
+
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active"><a routerLink=''>Home</a></li>
+      <li  [routerLinkActiveOptions]="{exact:true}"  routerLinkActive="active"> <a routerLink="/userdisplay">User</a></li>
+      <li routerLinkActive="active"> <a routerLink="/userdisplay/adduser">AddUsers</a></li>
+      <li routerLinkActive="active"> <a routerLink="/productdisplay">products</a></li>
+      <li routerLinkActive="active">  <a routerLink="/taskdisplay">tasks</a></li>
+      <li routerLinkActive="active">  <a routerLink="/taskdisplay/addtask">addtask</a></li>
+      <!-- <li routerLinkActive="active">  <a routerLink="login">login</a></li> -->
+
+      <li *ngIf="!isLoggedIn()" routerLinkActive="active"><a  routerLink="/login">Login</a></li>
+      <li *ngIf="isLoggedIn()" routerLinkActive="active"><a (click)="onLogOut()" >Log Out</a></li>
+     </ul>
+
+  </div>
+</div>
+</nav>

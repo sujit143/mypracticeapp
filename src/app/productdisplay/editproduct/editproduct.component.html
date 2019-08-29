@@ -1,0 +1,34 @@
+<h1>edit product page</h1>
+
+<div class="container">
+<form [formGroup]="edit" (ngSubmit)="onEditProduct()">
+  <div class="form-group">
+    <label>product id</label>
+    <input type="number" formControlName="pro_id" class="form-control" placeholder="enter the product id">
+    <label class="alert alert-danger" *ngIf="edit.get('pro_id').hasError('required')">product id is required</label>
+</div>
+  <div class="form-group">
+    <label>product desc</label>
+    <input type="text" formControlName="pro_desc" class="form-control" placeholder="enter the product desc">
+    </div>
+  <div class="form-group">
+    <label>product qty</label>
+    <input type="number" formControlName="pro_qty" class="form-control" placeholder="enter the product qty">
+   </div>
+  <div class="form-group">
+    <label>product mfg</label>
+    <input type="text"  formControlName="pro_mfg"   class="form-control" placeholder="enter the product mfg">
+   </div>
+  <div class="form-group">
+    <label>product price</label>
+    <input type="number" formControlName="pro_price"  class="form-control" placeholder="enter the product price">
+    </div>
+    <div class="form-group">
+      <label>product img</label>
+      <input type="string" formControlName="pro_img"    class="form-control" placeholder="enter the product img path">
+      </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary form-control">save</button>
+    </div>
+</form>
+</div>
